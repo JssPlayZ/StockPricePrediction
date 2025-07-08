@@ -37,7 +37,7 @@ Predict future stock closing prices using historical data and an LSTM (Long Shor
 ## 📊 Screenshots
 
 ### Closing Price of AAPL (2015–2024)
-![AAPL Closing Price](price_plot.png)
+![AAPL Closing Price](./data/notebook/price_plot.png)
 
 ---
 
