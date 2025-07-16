@@ -32,12 +32,30 @@ Predict future stock closing prices using historical data and an LSTM (Long Shor
 - [x] Built initial LSTM model with 2 layers
 - [x] Generated input shape: `(2455, 60, 1)`
 - [x] Saved price trend plot as `price_plot.png`
+
+✅ Status Update (Days 5–7)
+🎯 Trained LSTM model on closing price data using 60-day window
+
+📉 Plotted training vs validation loss (loss_curve.png)
+
+📈 Compared actual vs predicted stock price (actual_vs_predicted.png)
+
+✅ Model trained for 20 epochs using MSE loss
+
+🔜 Next up: Add Moving Average and RSI indicators to improve accuracy
+
 ---
 
 ## 📊 Screenshots
 
 ### Closing Price of AAPL (2015–2024)
 ![AAPL Closing Price](./data/notebook/price_plot.png)
+
+### Training VS Validation Loss
+![Training VS Validation Loss](./data/notebook/loss_curve.png)
+
+### Actual VS Predicted Stock Price
+![Actual VS Predicted Stock Price](./data/notebook/actual_vs_predicted.png)
 
 ---
 
