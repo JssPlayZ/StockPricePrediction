@@ -1,66 +1,72 @@
 # 📈 Stock Price Trend Prediction using LSTM
 
-## 🎯 Project Objective
-Predict future stock closing prices using historical data and an LSTM (Long Short-Term Memory) neural network. This project is part of my internship deliverables and focuses on time-series forecasting using deep learning.
+This project aims to predict future stock prices based on historical closing price trends using Long Short-Term Memory (LSTM) neural networks. It includes technical indicators such as the 14-day Moving Average and RSI for improved accuracy.
 
 ---
 
-## 🧰 Tools & Libraries
+## 🚀 Project Overview
+
+- **Objective**: Predict next-day stock prices using past 60-day windows
+- **Model**: LSTM Neural Network (2 layers)
+- **Dataset**: Stock price data from Yahoo Finance via `yfinance` API
+- **Indicators**: MA14 (Moving Average), RSI (Relative Strength Index)
+- **Evaluation Metrics**: RMSE, MAE, R² Score
+- **Optional UI**: Streamlit dashboard to visualize results
+
+---
+
+## 🧠 Tools & Libraries Used
+
 - Python
-- [yfinance](https://pypi.org/project/yfinance/)
-- Pandas, NumPy, Matplotlib
+- yfinance
+- pandas, numpy
+- matplotlib, seaborn
 - scikit-learn
-- TensorFlow / Keras (LSTM)
-- Jupyter Notebook
+- keras (TensorFlow backend)
+- Streamlit (for dashboard)
 
 ---
 
-## 📦 Dataset
-- Fetched from Yahoo Finance using `yfinance`
-- Ticker used: `AAPL`
-- Date range: `2015-01-01` to `2024-12-31`
-- Data includes: `Open`, `High`, `Low`, `Close`, `Adj Close`, `Volume`
+## 📊 Workflow
+
+1. **Fetch data** from Yahoo Finance using `yfinance`
+2. **Compute technical indicators** (MA14 and RSI)
+3. **Normalize** the dataset using `MinMaxScaler`
+4. **Generate sequences** using sliding 60-day windows
+5. **Train-test split**
+6. **Build and train LSTM model** with two stacked layers
+7. **Evaluate** performance (RMSE, MAE, R²)
+8. **Visualize** actual vs predicted prices
+9. *(Optional)* Build a **Streamlit app** for interactive prediction and visualization
 
 ---
 
-## 🚧 Current Progress (Updated)
-### ✅ Completed (Day 1–4)
-- [x] Downloaded & cleaned historical stock data
-- [x] Visualized the closing price trend
-- [x] Normalized data using MinMaxScaler
-- [x] Created input sequences (60-day sliding window)
-- [x] Built initial LSTM model with 2 layers
-- [x] Generated input shape: `(2455, 60, 1)`
-- [x] Saved price trend plot as `price_plot.png`
+## 📷 Screenshots
 
-✅ Status Update (Days 5–7)
-🎯 Trained LSTM model on closing price data using 60-day window
+### Price Trend
+![Price Trend](./data/notebook/price_plot.png)
 
-📉 Plotted training vs validation loss (loss_curve.png)
+### Loss Curve
+![Loss Curve](./data/notebook/loss_curve.png)
 
-📈 Compared actual vs predicted stock price (actual_vs_predicted.png)
-
-✅ Model trained for 20 epochs using MSE loss
-
-🔜 Next up: Add Moving Average and RSI indicators to improve accuracy
+### Actual vs Predicted
+![Prediction](./data/notebook/actual_vs_predicted_with_indicators.png)
 
 ---
 
-## 📊 Screenshots
+## 🧪 Sample Results
 
-### Closing Price of AAPL (2015–2024)
-![AAPL Closing Price](./data/notebook/price_plot.png)
+| Metric | Value |
+|--------|-------|
+| RMSE   | ~2.14 |
+| MAE    | ~1.58 |
+| R²     | ~0.92 |
 
-### Training VS Validation Loss
-![Training VS Validation Loss](./data/notebook/loss_curve.png)
-
-### Actual VS Predicted Stock Price
-![Actual VS Predicted Stock Price](./data/notebook/actual_vs_predicted.png)
+> *(Values may vary slightly based on training run and ticker used.)*
 
 ---
 
-## 🛠️ How to Run
+## ▶️ Run the App (Streamlit)
 
-1. Install requirements:
 ```bash
-pip install yfinance pandas numpy matplotlib scikit-learn tensorflow
+streamlit run streamlit_app.py
